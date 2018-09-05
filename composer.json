@@ -1,0 +1,24 @@
+{
+  "name": "ministryofweb/analytics-campaign-urls",
+  "description": "Adds Campaign parameters to URLs",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "MinistryOfWeb\\AnalyticsCampaignUrls\\": "src/"
+    }
+  },
+  "require": {
+    "php": "~7.0.0 || ~7.1.0 || ~7.2.0 || ~7.3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.5"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marcus Jaschen",
+      "email": "mjaschen@gmail.com",
+      "homepage": "https://www.marcusjaschen.de/"
+    }
+  ]
+}
