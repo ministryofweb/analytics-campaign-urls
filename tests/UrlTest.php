@@ -16,6 +16,14 @@ class UrlTest extends TestCase
         $this->assertEquals($expected, Url::addAnalyticsCampaignParams('https://example.com/', $parameters));
     }
 
+    public function testIfUrlBuildingWithPathWorksAsExpected()
+    {
+        $expected = '/just/a/path?utm_campaign=summer&utm_medium=banner&utm_source=website';
+        $parameters = new GoogleAnalytics('summer', 'banner', 'website');
+
+        $this->assertEquals($expected, Url::addAnalyticsCampaignParams('/just/a/path', $parameters));
+    }
+
     public function testIfUrlBuildingWithGoogleAnalyticsAllParametersWorksAsExpected()
     {
         $expected = 'https://example.com/?utm_campaign=summer&utm_medium=banner&utm_source=website&utm_term=term&utm_content=content';
