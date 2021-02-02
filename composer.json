@@ -26,11 +26,13 @@
     }
   ],
   "scripts": {
+    "ci:validate-composer": "composer validate --no-check-all --strict",
     "ci:lint": "find src tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
     "ci:phpcs": "./vendor/bin/phpcs --standard=codesniffer_rules.xml src",
     "ci:psalm": "./vendor/bin/psalm",
     "ci:tests": "./vendor/bin/phpunit",
     "ci:static": [
+      "@ci:validate-composer",
       "@ci:lint",
       "@ci:phpcs",
       "@ci:psalm"
