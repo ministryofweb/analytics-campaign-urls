@@ -19,13 +19,14 @@
     }
   ],
   "require": {
-    "php": ">=7.0"
+    "php": "^8.1"
   },
   "require-dev": {
-    "ergebnis/composer-normalize": "^2.13",
-    "phpunit/phpunit": "^8.0",
-    "squizlabs/php_codesniffer": "^3.5",
-    "vimeo/psalm": "^4.4"
+    "ergebnis/composer-normalize": "^2.39",
+    "phpunit/phpunit": "^10.0",
+    "squizlabs/php_codesniffer": "^3.7",
+    "vimeo/psalm": "^5.0",
+    "rector/rector": "^0.18.12"
   },
   "autoload": {
     "psr-4": {
@@ -51,5 +52,10 @@
     ],
     "ci:tests": "./vendor/bin/phpunit",
     "ci:validate-composer": "composer validate --no-check-all --strict"
+  },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true
+    }
   }
 }

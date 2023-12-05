@@ -1,10 +1,13 @@
 # Analytics Campaign URLs
 
-This library allows it to easily append campaign parameters (e. g. for Google Analytics or Piwik) to any given URL.
+This library allows it to easily append campaign parameters (e.g. for Google
+Analytics, Matomo/Piwik or Plausible) to any given URL.
 
 ## Requirements
 
-At least PHP 7.0 is required to use this library. 
+At least PHP 8.1 is required to use this library in the current version.
+
+Version 2.x of this library supports PHP versions 7.0 or higher.
 
 ## Installation
 
@@ -49,7 +52,6 @@ $campaignUrlMatomo = Url::addAnalyticsCampaignParams('https://example.com/', $ma
 
 - [Google Analytics Campaign URL Builder][ga]
 - [Matomo Campaign URL Builder][matomo]
-
 
 [ga]: https://ga-dev-tools.appspot.com/campaign-url-builder/
 [matomo]: https://matomo.org/docs/tracking-campaigns-url-builder/
