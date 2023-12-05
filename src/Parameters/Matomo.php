@@ -1,60 +1,22 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MinistryOfWeb\AnalyticsCampaignUrls\Parameters;
 
 class Matomo implements ParametersInterface
 {
-    /**
-     * @var string
-     */
-    private $campaign;
-
-    /**
-     * @var string
-     */
-    private $medium;
-
-    /**
-     * @var string
-     */
-    private $source;
-
-    /**
-     * @var string
-     */
-    private $keyword;
-
-    /**
-     * @var string
-     */
-    private $content;
-
-    /**
-     * Parameters constructor.
-     *
-     * @param string $campaign
-     * @param string $medium
-     * @param string $source
-     * @param string $keyword
-     * @param string $content
-     */
     public function __construct(
-        string $campaign,
-        string $medium = '',
-        string $source = '',
-        string $keyword = '',
-        string $content = ''
+        public readonly string $campaign,
+        public readonly string $medium = '',
+        public readonly string $source = '',
+        public readonly string $keyword = '',
+        public readonly string $content = ''
     ) {
-        $this->campaign = $campaign;
-        $this->medium   = $medium;
-        $this->source   = $source;
-        $this->keyword  = $keyword;
-        $this->content  = $content;
     }
 
     /**
-     * @return string
+     * @deprecated use property instead
      */
     public function getCampaign(): string
     {
@@ -62,7 +24,7 @@ class Matomo implements ParametersInterface
     }
 
     /**
-     * @return string
+     * @deprecated use property instead
      */
     public function getMedium(): string
     {
@@ -70,7 +32,7 @@ class Matomo implements ParametersInterface
     }
 
     /**
-     * @return string
+     * @deprecated use property instead
      */
     public function getSource(): string
     {
@@ -78,7 +40,7 @@ class Matomo implements ParametersInterface
     }
 
     /**
-     * @return string
+     * @deprecated use property instead
      */
     public function getKeyword(): string
     {
@@ -86,7 +48,7 @@ class Matomo implements ParametersInterface
     }
 
     /**
-     * @return string
+     * @deprecated use property instead
      */
     public function getContent(): string
     {
@@ -104,19 +66,19 @@ class Matomo implements ParametersInterface
             'pk_campaign' => $this->campaign,
         ];
 
-        if (! empty($this->medium)) {
+        if (!empty($this->medium)) {
             $params['pk_medium'] = $this->medium;
         }
 
-        if (! empty($this->source)) {
+        if (!empty($this->source)) {
             $params['pk_source'] = $this->source;
         }
 
-        if (! empty($this->keyword)) {
+        if (!empty($this->keyword)) {
             $params['pk_kwd'] = $this->keyword;
         }
 
-        if (! empty($this->content)) {
+        if (!empty($this->content)) {
             $params['pk_content'] = $this->content;
         }
 
